@@ -61,6 +61,11 @@ public class MyArrayList<E> implements List<E> {
 
     @Override
     public boolean contains(E data) {
+        for (int i = 0; i < size; i++) {
+            if (elements[i] != null && elements[i].equals(data)) {
+                return true;
+            }
+        }
         return false;
     }
 
