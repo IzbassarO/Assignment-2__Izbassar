@@ -34,8 +34,8 @@ public class MyArrayList<E> implements List<E> {
     @Override
     public E get(int index) {
         // Check if index is out of range
-        if(0 < index || index >= size) {
-            throw new IndexOutOfBoundsException("Index Out Of Range: " + index);
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index out of range: " + index);
         }
 
         return (E) elements[index];
