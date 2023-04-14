@@ -58,9 +58,30 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public E remove(int index) {
-        //
+        // Check if index in range between 0 and size - 1
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
+        }
+
+        Node currentNode = head;
+
+        for (int i = 0; i < index; i++) {
+            currentNode = currentNode.next;
+        }
+
+        Node prevNode = currentNode.prev;
+        Node nextNode = currentNode.next;
+
+        if (prevNode != null) {
+            prevNode.next = nextNode;
+        } else {
+            head = nextNode;
+        }
+
+        if (nextNode != null) {
+            nextNode.prev = prevNode;
+        } else {
+            tail = prevNode;
         }
 
         size--;
