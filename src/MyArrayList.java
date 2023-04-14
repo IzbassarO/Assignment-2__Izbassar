@@ -18,11 +18,22 @@ public class MyArrayList<E> implements List<E> {
 
     @Override
     public void add(E element) {
+        // Check if it verifies size equals to elements length
+        if(size == elements.length) {
+
+        }
+        // Increment size and add element to elements' array
+        elements[size++] = element;
     }
 
+    // Return data that holds in exact index if it exists
     @Override
     public E get(int index) {
-        return null;
+        // Check if index is out of range
+        if(0 < index || index >= size) {
+
+        }
+        return elements[index];
     }
 
     @Override
