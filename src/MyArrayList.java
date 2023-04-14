@@ -59,6 +59,11 @@ public class MyArrayList<E> implements List<E> {
         return removedElement;
     }
 
+    @Override
+    public boolean contains(E data) {
+        return false;
+    }
+
     // returns the current size of MyArrayList object
     @Override
     public int size() {

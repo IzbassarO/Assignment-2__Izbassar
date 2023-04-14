@@ -20,6 +20,11 @@ public class MyLinkedList<E> implements List<E> {
     }
 
     @Override
+    public boolean contains(E data) {
+        return false;
+    }
+
+    @Override
     public int size() {
         return 0;
     }
