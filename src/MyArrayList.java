@@ -9,11 +9,9 @@ public class MyArrayList<E> implements List<E> {
     }
 
     public MyArrayList(int definedCapacity) {
-
         if (initialCapacity < 0) {
             throw new NegativeArraySizeException("Initial capacity cannot be negative");
         }
-
         this.elements = new Object[definedCapacity];
         this.size = 0;
     }
@@ -46,7 +44,19 @@ public class MyArrayList<E> implements List<E> {
     // delete data that holds in exact index if it exists
     @Override
     public E remove(int index) {
-        return null;
+        // Check if index in range or not
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index out of range: " + index);
+        }
+
+        E removedElement = (E) elements[index];
+
+        for (int i = index + 1; i < size; i++) {
+            elements[i - 1] = elements[i];
+        }
+
+        elements[--size] = null;
+        return removedElement;
     }
 
     // returns the current size of MyArrayList object
