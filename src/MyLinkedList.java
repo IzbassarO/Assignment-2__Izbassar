@@ -35,7 +35,7 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public E get(int index) {
-        return null;
+
     }
 
     @Override
@@ -45,6 +45,13 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public boolean contains(E data) {
+        Node current = head;
+        while (current != null) {
+            if (current.element.equals(data)) {
+                return true;
+            }
+            current = current.next;
+        }
         return false;
     }
 
