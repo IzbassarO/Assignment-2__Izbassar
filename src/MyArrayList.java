@@ -46,7 +46,7 @@ public class MyArrayList<E> implements List<E> {
     // delete data that holds in exact index if it exists
     @Override
     public E remove(int index) {
-
+        return null;
     }
 
     // returns the current size of MyArrayList object
