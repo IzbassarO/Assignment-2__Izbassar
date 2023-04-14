@@ -17,6 +17,20 @@ public class MyArrayList<E> implements List<E> {
     }
 
     @Override
+    public void add(E element) {
+    }
+
+    @Override
+    public E get(int index) {
+        return null;
+    }
+
+    @Override
+    public E remove(int index) {
+        return null;
+    }
+
+    @Override
     public int size() {
         return size;
     }
