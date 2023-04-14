@@ -23,6 +23,14 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public void add(E element) {
+        Node newNode = new Node(element, null, tail);
+        if (size == 0) {
+            head = newNode;
+        } else {
+            tail.next = newNode;
+        }
+        tail = newNode;
+        size++;
     }
 
     @Override
