@@ -2,8 +2,14 @@ public class MyArrayList<E> implements List<E> {
     private static final int initialCapacity = 10;
     private Object[] elements;
     private int size;
+
+    public MyArrayList() {
+        this.elements = new Object[initialCapacity];
+        this.size = 0;
+    }
+
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 }
