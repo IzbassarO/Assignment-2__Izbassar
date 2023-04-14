@@ -1,3 +1,3 @@
-public interface List {
+public interface List<E> {
     int size();
 }

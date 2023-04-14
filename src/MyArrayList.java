@@ -8,6 +8,14 @@ public class MyArrayList<E> implements List<E> {
         this.size = 0;
     }
 
+    public MyArrayList(int definedCapacity) {
+        if (initialCapacity < 0) {
+            throw new NegativeArraySizeException("Initial capacity cannot be negative");
+        }
+        this.elements = new Object[definedCapacity];
+        this.size = 0;
+    }
+
     @Override
     public int size() {
         return size;
