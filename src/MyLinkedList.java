@@ -11,6 +11,12 @@ public class MyLinkedList<E> implements List<E> {
         }
     }
 
+    public MyLinkedList() {
+        head = null;
+        tail = null;
+        size = 0;
+    }
+
     private Node head;
     private Node tail;
     private int size;
