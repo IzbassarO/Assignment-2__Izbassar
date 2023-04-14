@@ -31,16 +31,19 @@ public class MyArrayList<E> implements List<E> {
     public E get(int index) {
         // Check if index is out of range
         if(0 < index || index >= size) {
-
+            throw new IndexOutOfBoundsException("Index Out Of Range: " + index);
         }
-        return elements[index];
+
+        return (E) elements[index];
     }
 
+    // delete data that holds in exact index if it exists
     @Override
     public E remove(int index) {
-        return null;
+
     }
 
+    // returns the current size of MyArrayList object
     @Override
     public int size() {
         return size;
