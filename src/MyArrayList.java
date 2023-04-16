@@ -133,7 +133,16 @@ public class MyArrayList<E> implements List<E> {
 
     @Override
     public void sort() {
-
+        for (int i = 0; i < size - 1; i++) {
+            for (int j = 0; j < size - i - 1; j++) {
+                if (((Comparable<E>) elements[j]).compareTo((E) elements[j + 1]) > 0) {
+                    // Swap elements[j] and elements[j + 1]
+                    E temp = (E) elements[j];
+                    elements[j] = elements[j + 1];
+                    elements[j + 1] = temp;
+                }
+            }
+        }
     }
 
     // returns the current size of MyArrayList object
