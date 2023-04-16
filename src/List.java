@@ -10,4 +10,5 @@ public interface List<E> {
     int indexOf(Object o);
     int lastIndexOf(Object o);
     void sort();
+    String toString();
 }

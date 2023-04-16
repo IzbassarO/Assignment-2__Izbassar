@@ -236,4 +236,20 @@ public class MyLinkedList<E> implements List<E> {
     public int size() {
         return size;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        Node currentNode = head;
+        while (currentNode != null) {
+            sb.append(currentNode.element.toString());
+            if (currentNode.next != null) {
+                sb.append(", ");
+            }
+            currentNode = currentNode.next;
+        }
+        sb.append("]");
+        return sb.toString();
+    }
 }

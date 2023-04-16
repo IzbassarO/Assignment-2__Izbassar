@@ -14,13 +14,15 @@ public class Main {
         // Checking if 20 exists in myList object
         System.out.println("Contains 20: " + myList.contains(20)); // Output: Contains 20: false
 
+        // Check what in the arrayList object myList
+        System.out.println(myList);
+
         // Sorting the list
         myList.sort();
 
         // Clearing the list
         myList.clear();
-
-
+        
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
 
         MyLinkedList<String> list = new MyLinkedList<>();
