@@ -119,6 +119,26 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public boolean remove(E item) {
+        Node currentNode = head;
+        while (currentNode != null) {
+            if (currentNode.element.equals(item)) {
+                Node prevNode = currentNode.prev;
+                Node nextNode = currentNode.next;
+                if (prevNode != null) {
+                    prevNode.next = nextNode;
+                } else {
+                    head = nextNode;
+                }
+                if (nextNode != null) {
+                    nextNode.prev = prevNode;
+                } else {
+                    tail = prevNode;
+                }
+                size--;
+                return true;
+            }
+            currentNode = currentNode.next;
+        }
         return false;
     }
 
