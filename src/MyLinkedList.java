@@ -143,12 +143,29 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public int indexOf(Object o) {
-        return 0;
-    }
+        Node currentNode = head;
+        int index = 0;
+        while (currentNode != null) {
+            if (currentNode.element.equals(o)) {
+                return index;
+            }
+            currentNode = currentNode.next;
+            index++;
+        }
+        return -1;    }
 
     @Override
     public int lastIndexOf(Object o) {
-        return 0;
+        Node currentNode = tail;
+        int index = size - 1;
+        while (currentNode != null) {
+            if (currentNode.element.equals(o)) {
+                return index;
+            }
+            currentNode = currentNode.prev;
+            index--;
+        }
+        return -1;
     }
 
     @Override
