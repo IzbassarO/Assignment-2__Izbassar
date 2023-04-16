@@ -34,6 +34,11 @@ public class MyLinkedList<E> implements List<E> {
     }
 
     @Override
+    public void add(E item, int index) {
+
+    }
+
+    @Override
     public E get(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
@@ -89,7 +94,12 @@ public class MyLinkedList<E> implements List<E> {
     }
 
     @Override
-    public boolean contains(E data) {
+    public boolean remove(E item) {
+        return false;
+    }
+
+    @Override
+    public boolean contains(Object data) {
         Node current = head;
         while (current != null) {
             if (current.element.equals(data)) {
@@ -98,6 +108,26 @@ public class MyLinkedList<E> implements List<E> {
             current = current.next;
         }
         return false;
+    }
+
+    @Override
+    public void clear() {
+
+    }
+
+    @Override
+    public int indexOf(Object o) {
+        return 0;
+    }
+
+    @Override
+    public int lastIndexOf(Object o) {
+        return 0;
+    }
+
+    @Override
+    public void sort() {
+
     }
 
     @Override
