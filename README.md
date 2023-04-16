@@ -12,11 +12,15 @@ size
 
 add(E element)
 •	add an element value to the last index of an array
-•	type of method is int
+•	type of method is void
 
 add(E item, int index)
 •	add an element value to a specific index of an array
-•	type of method is int
+•	type of method is void
+
+get(int index)
+•	returns an value stored in array's cell by specific index
+•	type of method is E(generic) will output supposted type of data as array's data type
 
 remove(int index)
 •	removes a value at a specific index
