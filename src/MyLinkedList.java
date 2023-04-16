@@ -35,7 +35,31 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public void add(E item, int index) {
+        // Check if index in range between 0 and size - 1
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException();
+        }
 
+        if (index == size) {
+            add(item); // If index is at the end, simply call the add(E element) method
+        } else {
+            Node newNode = new Node(item, null, null);
+            if (index == 0) {
+                newNode.next = head;
+                head.prev = newNode;
+                head = newNode;
+            } else {
+                Node currentNode = head;
+                for (int i = 0; i < index - 1; i++) {
+                    currentNode = currentNode.next;
+                }
+                newNode.next = currentNode.next;
+                newNode.prev = currentNode;
+                currentNode.next.prev = newNode;
+                currentNode.next = newNode;
+            }
+            size++;
+        }
     }
 
     @Override
@@ -63,7 +87,7 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public E remove(int index) {
-        // Check if index in range between 0 and size - 1
+        // Check if index in range between 0 and size
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
@@ -112,7 +136,9 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public void clear() {
-
+        head = null;
+        tail = null;
+        size = 0;
     }
 
     @Override
